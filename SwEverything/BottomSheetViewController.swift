@@ -56,7 +56,7 @@ class BottomSheetViewController: UIViewController, UINavigationControllerDelegat
         
         counter = counter == 3 ? 1 : counter + 1
         
-        if time > 3.0 {
+        if time > 1.0 {
             self.timer.invalidate()
             isEntry = true
             self.infoLabel.text = "Вы успешно вошли в аккаунт"

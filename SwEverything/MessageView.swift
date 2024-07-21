@@ -21,19 +21,41 @@ class MessageView: UITableViewCell {
         return label
     }()
     
-    func configure(title: String, body: String) {
+    private let image: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "nissan_400z.jpg")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(bodyLabel)
-
-        titleLabel.text = title
-        bodyLabel.text = body
+        contentView.addSubview(image)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            image.topAnchor.constraint(equalTo: contentView.topAnchor),
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            image.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            image.heightAnchor.constraint(equalToConstant: 250)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
@@ -44,6 +66,11 @@ class MessageView: UITableViewCell {
             bodyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             bodyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+    
+    func configure(title: String, body: String) {
+        titleLabel.text = title
+        bodyLabel.text = body
     }
     
 }

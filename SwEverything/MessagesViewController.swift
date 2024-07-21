@@ -30,6 +30,7 @@ class MessagesViewController : UIViewController, UITableViewDelegate, UITableVie
         view.addSubview(messagesTableView)
         
         messagesTableView.translatesAutoresizingMaskIntoConstraints = false
+        messagesTableView.separatorStyle = .singleLine
         
         NSLayoutConstraint.activate([
             messagesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -61,9 +62,17 @@ class MessagesViewController : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ac = UIAlertController(title: viewModel.messages[indexPath.row].title, message: "Message", preferredStyle: .alert)
+        ac.addAction(.init(title: "ok", style: .default, handler: nil))
+        present(ac, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        viewModel.messages.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .right)
+    }
+
     @objc private func onTapAdd() {
         coordinator?.logout()
     }

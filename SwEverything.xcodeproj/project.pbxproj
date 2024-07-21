@@ -24,6 +24,7 @@
 		FE579B3C2C3A87D100643C71 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE579B3B2C3A87D100643C71 /* MessagesViewController.swift */; };
 		FE579B4B2C3AC50400643C71 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE579B492C3AC50400643C71 /* MessageView.swift */; };
 		FE579B4C2C3AC50400643C71 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE579B4A2C3AC50400643C71 /* MessageView.xib */; };
+		FEF215582C4423D4002F1912 /* nissan_400z.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEF215572C4423D4002F1912 /* nissan_400z.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		FE579B3B2C3A87D100643C71 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		FE579B492C3AC50400643C71 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		FE579B4A2C3AC50400643C71 /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		FEF215572C4423D4002F1912 /* nissan_400z.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nissan_400z.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		FE2622B32C317491007A52FB /* SwEverything */ = {
 			isa = PBXGroup;
 			children = (
+				FEF215572C4423D4002F1912 /* nissan_400z.jpg */,
 				FE2622B42C317491007A52FB /* AppDelegate.swift */,
 				FE2622B62C317491007A52FB /* SceneDelegate.swift */,
 				FE2622B82C317491007A52FB /* ViewController.swift */,
@@ -294,6 +297,7 @@
 				FE579B4C2C3AC50400643C71 /* MessageView.xib in Resources */,
 				FE2622C12C317492007A52FB /* LaunchScreen.storyboard in Resources */,
 				FE2622BE2C317492007A52FB /* Assets.xcassets in Resources */,
+				FEF215582C4423D4002F1912 /* nissan_400z.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
